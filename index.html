@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="frame">
+        <div class="div1">
+   <form>
+    <input id="input" type="text" placeholder="text...">
+    <button id="button">SEND</button>
+    <div id="div" class="div2">
+
+    </div>
+   </form><br>
+    </div>
+    </div>
+    <script>
+    let input=document.getElementById("input")
+    let button=document.getElementById("button")
+    let div=document.getElementById("div")
+
+let getInputValue = (event)=>{
+
+event.preventDefault();
+
+
+let isValue = input.value;
+
+
+console.log(isValue)
+
+
+
+createTodo(isValue)
+
+}
+button.addEventListener("click", getInputValue)
+
+
+// step -7
+const createTodo = (isValue)=>{
+let paragraph= document.createElement("p")
+
+
+
+    paragraph.innerHTML=isValue
+
+    div.appendChild(paragraph);
+}
+
+    </script>
+</body>
+</html>
+<style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.frame{
+background-color: rgb(212, 174, 174);
+height: 100vh;
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+    
+}
+input{
+    padding: 10px 10px 10px 10px;
+}
+button{
+    padding: 8px 8px 8px 8px;
+}
+p{
+    color: whitesmoke;
+    max-width: 300px;
+    background-color: whitesmoke;
+    color: rgb(39, 34, 34);
+    padding: 10px 20px;
+    margin: 10px 0px;
+    border-radius: 3px;
+}
+
+</style>
